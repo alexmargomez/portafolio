@@ -1,0 +1,48 @@
+.iconDownUp {
+    animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+    from {
+        color: white;
+        font-size: 20px;
+    }
+    to {
+        color: #ff6500;
+        
+    }
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.group:hover .tooltip {
+    opacity: 1;
+}
+
+.animate-green{
+    animation: changeColorGreen 1s infinite alternate;
+}
+@keyframes changeColorGreen {
+    from {
+        color: green;
+        font-size: 14px;
+    }
+    to {
+        color: #3cff00;
+        font-size: 16px;
+    }
+}
