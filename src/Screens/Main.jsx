@@ -107,11 +107,12 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
 
       {/* Bloque de Tecnologías */}
       <div className='flex flex-col justify-center items-center space-y-2.5 w-full max-w-4xl'>
-        <div className="relative flex items-center justify-center w-full">
-          <div className="absolute w-[90%] md:w-full border-t border-white/15"></div>
-          <h3 className="relative bg-[#09122c] px-4 text-sm sm:text-lg md:text-xl font-semibold text-gray-200">
+        <div className="flex items-center justify-center w-full gap-4 px-4">
+          <div className="flex-1 border-t border-white/15"></div>
+          <h3 className="text-sm sm:text-lg md:text-xl font-semibold text-gray-200 shrink-0">
             Stack Tecnológico
           </h3>
+          <div className="flex-1 border-t border-white/15"></div>
         </div>
 
         <ul className="flex flex-wrap justify-center items-center gap-2 sm:gap-3.5 md:gap-4 pt-1 px-1">

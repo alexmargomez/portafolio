@@ -1,3 +1,9 @@
+@property --theta {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 #root {
   height: 100dvh;
   width: 100%;
@@ -19,5 +25,78 @@ html, body, #root {
   flex-grow: 1;
 }
 
+/* Movimiento armónico real con funciones trigonométricas CSS sin() y cos() */
+@keyframes trigOrbit {
+  from {
+    --theta: 0deg;
+  }
+  to {
+    --theta: 360deg;
+  }
+}
 
+/* Fallback suave por si algún navegador antiguo no soporta @property */
+@keyframes waveFlowX {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 
+@keyframes verticalBobSin {
+  0%, 100% {
+    transform: translate3d(0, -14px, 0);
+  }
+  50% {
+    transform: translate3d(0, 14px, 0);
+  }
+}
+
+.bg-orb-sin-cos-1 {
+  animation: trigOrbit 22s linear infinite;
+  transform: translate3d(
+    calc(cos(var(--theta)) * 22vw),
+    calc(sin(calc(var(--theta) * 2)) * 16vh),
+    0
+  );
+  will-change: transform;
+}
+
+.bg-orb-sin-cos-2 {
+  animation: trigOrbit 28s linear infinite reverse;
+  transform: translate3d(
+    calc(sin(var(--theta)) * 24vw),
+    calc(cos(var(--theta)) * 18vh),
+    0
+  );
+  will-change: transform;
+}
+
+.bg-orb-sin-cos-3 {
+  animation: trigOrbit 34s linear infinite;
+  transform: translate3d(
+    calc(sin(calc(var(--theta) * 2)) * 18vw),
+    calc(cos(var(--theta)) * 15vh),
+    0
+  );
+  will-change: transform;
+}
+
+.sine-wave-track-slow {
+  width: 200%;
+  animation: waveFlowX 18s linear infinite;
+  will-change: transform;
+}
+
+.cosine-wave-track-fast {
+  width: 200%;
+  animation: waveFlowX 13s linear infinite reverse;
+  will-change: transform;
+}
+
+.sine-wave-vertical {
+  animation: verticalBobSin 6s ease-in-out infinite;
+  will-change: transform;
+}

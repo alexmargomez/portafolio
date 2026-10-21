@@ -95,7 +95,58 @@ function App() {
   const handleClickContact = () => scrollToSection('contact')
   
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="relative flex flex-col h-full w-full">
+      {/* Fondo animado fijo con trayectorias trigonométricas CSS sin() y cos() + ondas sinusoidales */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      >
+        {/* Orbes de luz ambiental desplazándose con sin(--theta) y cos(--theta) */}
+        <div className="bg-orb-sin-cos-1 absolute top-[14%] left-[18%] w-72 h-72 sm:w-[26rem] sm:h-[26rem] rounded-full bg-[#ff6500]/18 blur-[95px]" />
+        <div className="bg-orb-sin-cos-2 absolute bottom-[12%] right-[15%] w-80 h-80 sm:w-[30rem] sm:h-[30rem] rounded-full bg-blue-500/20 blur-[110px]" />
+        <div className="bg-orb-sin-cos-3 absolute top-[42%] left-[45%] w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-[#ff6500]/10 blur-[100px]" />
+
+        {/* Ondas matemáticas sin(x) y cos(x) en movimiento continuo */}
+        <div className="sine-wave-vertical absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-25">
+          <svg
+            className="sine-wave-track-slow h-44 sm:h-64"
+            viewBox="0 0 2400 200"
+            fill="none"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M 0 100 Q 150 10, 300 100 T 600 100 T 900 100 T 1200 100 T 1500 100 T 1800 100 T 2100 100 T 2400 100"
+              stroke="#ff6500"
+              strokeWidth="2"
+              strokeOpacity="0.65"
+            />
+            <path
+              d="M 0 100 Q 150 190, 300 100 T 600 100 T 900 100 T 1200 100 T 1500 100 T 1800 100 T 2100 100 T 2400 100"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              strokeDasharray="6 6"
+              strokeOpacity="0.45"
+            />
+          </svg>
+        </div>
+
+        <div className=" absolute inset-x-0 bottom-6 sm:bottom-10 opacity-20">
+          <svg
+            className="cosine-wave-track-fast h-28 sm:h-40"
+            viewBox="0 0 2400 200"
+            fill="none"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M 0 100 C 100 20, 200 20, 300 100 S 500 180, 600 100 S 800 20, 900 100 S 1100 180, 1200 100 S 1400 20, 1500 100 S 1700 180, 1800 100 S 2000 20, 2100 100 S 2300 180, 2400 100"
+              stroke="#ffffff"
+              strokeWidth="1.5"
+              strokeOpacity="0.4"
+            />
+          </svg>
+        </div>
+      </div>
+
       <Navbar 
         currentSection={currentSection}
         handleClickMain={handleClickMain}
@@ -104,7 +155,7 @@ function App() {
         handleClickExperience={handleClickExperience}
         handleClickContact={handleClickContact}
       />
-      <div>
+      <div className="relative z-10">
         <Main id="main" className="flex-grow" onClickDown={handleClickDown} onClickProjects={handleClickProjects} />
         <Datos id="datos" className="flex-grow" onClickDown={handleClickProjects} />
         <Projects id="projects" className="flex-grow" onClickDown={handleClickExperience} />
