@@ -35,8 +35,8 @@ const EXPERIENCES = [
     badge: null,
     logo: logo,
     bullets: [
-      'Formación en lógica de programación, estructuras de datos y resolución de problemas computacionales.',
-      'Diseño de bases de datos relacionales y dirección de proyectos de software institucionales con estudiantes de secundaria.',
+      'Enseñanza aplicada de fundamentos de Ingeniería de Software: algoritmia, lógica de programación, desarrollo web y modelado de bases de datos SQL.',
+      'Mentoría técnica en el ciclo de vida de proyectos de software y comunicación efectiva de conceptos complejos de ingeniería y liderazgo.',
     ],
   },
 ]
