@@ -18,7 +18,7 @@ const Datos = ({ id, onClickDown }) => {
             </div>
             <div className='h-1/4 w-[90%] md:w-[60%] flex justify-center items-center mt-4'>
                 <p className='text-sm md:text-base'>
-                    Desarrollador web Full Stack con más de 2 años de experiencia. Especializado en la creación y consumo de API REST, bases de datos SQL, ecosistemas backend (Laravel, Symfony, Node.js, Django), frontend moderno (React, Vue) y orquestación con Docker bajo Arquitectura Hexagonal. Como docente de informática, enseñé programación y guié a estudiantes en la creación de plataformas para su institución.
+                    Desarrollador Backend y Full Stack con más de 2 años de experiencia. Especializado en arquitectura de API REST, optimización de bases de datos SQL, ecosistemas backend (Symfony, Laravel, PHP, Node.js, Django), interfaces modernas (React, Vue 3), administración de servidores Linux con Docker e implementación de automatizaciones con Agentes de IA.
                 </p>
             </div>
             <div className='h-1/4 flex justify-center items-center'>
