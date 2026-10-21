@@ -60,7 +60,7 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
         </h1>
 
         <p className='text-xs sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed px-2'>
-          Especializado en arquitectura Backend, desarrollo Full Stack, optimización de bases de datos SQL, infraestructura en Linux con Docker y automatización mediante Agentes de IA.
+          Especializado en arquitectura Backend, desarrollo Full Stack, optimización de bases de datos SQL, administración de infraestructura Linux, contenedores Docker y automatización mediante Agentes de IA.
         </p>
 
         {/* Botones de Acción Rápida */}
@@ -127,8 +127,8 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
         </ul>
       </div>
 
-      {/* Flecha hacia abajo */}
-      <div className='flex flex-col justify-end items-center pt-2'>
+      {/* Flecha hacia abajo aislada del layout */}
+      <div className='h-10 sm:h-12 shrink-0 flex justify-center items-center'>
         <FaAngleDown className="text-3xl sm:text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
       </div>
     </div>

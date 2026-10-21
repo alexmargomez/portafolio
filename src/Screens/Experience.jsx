@@ -119,8 +119,8 @@ const Experience = ({ id, onClickDown }) => {
         </div>
       </div>
 
-      {/* Flecha hacia abajo */}
-      <div className='flex flex-col justify-end items-center'>
+      {/* Flecha hacia abajo aislada del layout */}
+      <div className='h-10 sm:h-12 shrink-0 flex justify-center items-center'>
         <FaAngleDown className="text-3xl sm:text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
       </div>
     </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import {
   FaGithub,
   FaPhp,
-  FaSymfony,
   FaNodeJs,
   FaReact,
   FaVuejs,
@@ -79,15 +78,14 @@ const PROJECTS_LIST = [
     ],
   },
   {
-    title: 'API SM — Interoperabilidad FHIR',
+    title: 'API SM — Tablas SISPRO & FHIR',
     role: 'FullStack',
     repo: 'https://github.com/alexmargomez/API_SM',
     description:
-      'Motor de interoperabilidad clínica y validador normativo (Res. 1888 / HL7 FHIR) integrado con sistemas de historia clínica en Symfony. Desarrollado con Python, Django y Vue 3, inspector de Bundles FHIR y despliegue con Docker y MariaDB.',
+      'API REST y visor interactivo de Tablas de Referencia de Minsalud / SISPRO (catálogos normativos de códigos CUPS, CIE-10, Entidades y medicamentos) junto con validador e inspector de Bundles HL7 FHIR (Res. 1888). Desarrollado con Python, Django, Vue 3, MariaDB y Docker.',
     techs: [
       { icon: FaPython, name: 'Python' },
       { icon: SiDjango, name: 'Django' },
-      { icon: FaSymfony, name: 'Symfony' },
       { icon: FaVuejs, name: 'Vue 3' },
       { icon: PiFileSqlFill, name: 'MariaDB / SQL' },
       { icon: FaDocker, name: 'Docker' },
@@ -175,8 +173,8 @@ const Projects = ({ id, onClickDown }) => {
         </div>
       </div>
 
-      {/* Flecha hacia abajo */}
-      <div className='flex flex-col justify-end items-center'>
+      {/* Flecha hacia abajo aislada del layout */}
+      <div className='h-10 sm:h-12 shrink-0 flex justify-center items-center'>
         <FaAngleDown className="text-3xl sm:text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
       </div>
     </div>

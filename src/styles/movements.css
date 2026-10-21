@@ -1,15 +1,16 @@
 .iconDownUp {
-    animation: changeColor 1s infinite alternate;
+    animation: changeColor 1.1s ease-in-out infinite alternate;
+    will-change: transform, color;
 }
 
 @keyframes changeColor {
     from {
         color: white;
-        font-size: 20px;
+        transform: translateY(-4px);
     }
     to {
         color: #ff6500;
-        
+        transform: translateY(4px);
     }
 }
 
@@ -34,15 +35,15 @@
 }
 
 .animate-green{
-    animation: changeColorGreen 1s infinite alternate;
+    animation: changeColorGreen 1s ease-in-out infinite alternate;
 }
 @keyframes changeColorGreen {
     from {
         color: green;
-        font-size: 14px;
+        transform: scale(0.95);
     }
     to {
         color: #3cff00;
-        font-size: 16px;
+        transform: scale(1.08);
     }
 }

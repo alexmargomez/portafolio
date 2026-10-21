@@ -1,13 +1,14 @@
 import React from 'react'
 import { FaAngleDown } from "react-icons/fa6";
-import { FaArrowAltCircleDown, FaServer, FaDatabase, FaRobot, FaDocker } from "react-icons/fa";
+import { FaArrowAltCircleDown, FaServer, FaDatabase, FaRobot, FaDocker, FaLinux } from "react-icons/fa";
 import Foto from '../assets/yo.jpg'
 import Pdf from '../path/CV.pdf'
 
 const HIGHLIGHTS = [
   { icon: FaServer, label: 'Backend & Full Stack' },
   { icon: FaDatabase, label: 'Optimización SQL' },
-  { icon: FaDocker, label: 'Linux & Docker' },
+  { icon: FaLinux, label: 'Infraestructura Linux' },
+  { icon: FaDocker, label: 'Docker' },
   { icon: FaRobot, label: 'Agentes de IA' },
 ]
 
@@ -56,7 +57,7 @@ const Datos = ({ id, onClickDown }) => {
             </div>
 
             <p className='text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed'>
-              Desarrollador de Software Backend y Full Stack con más de <strong className='text-white'>2 años de experiencia</strong>. Especializado en arquitectura de API REST, optimización de rendimiento, reportes y bases de datos <strong className='text-white'>SQL</strong>, ecosistemas backend (<strong className='text-white'>Symfony, Laravel, PHP, Node.js, Django</strong>), interfaces modernas (<strong className='text-white'>React, Vue 3</strong>), infraestructura <strong className='text-white'>Linux con Docker</strong> e implementación de automatizaciones con <strong className='text-[#ff6500]'>Agentes de IA</strong>.
+              Desarrollador de Software Backend y Full Stack con más de <strong className='text-white'>2 años de experiencia</strong>. Especializado en arquitectura de API REST, optimización de rendimiento, reportes y bases de datos <strong className='text-white'>SQL</strong>, ecosistemas backend (<strong className='text-white'>Symfony, Laravel, PHP, Node.js, Django</strong>), interfaces modernas (<strong className='text-white'>React, Vue 3</strong>), administración de infraestructura <strong className='text-white'>Linux</strong>, contenerización con <strong className='text-white'>Docker</strong> e implementación de automatizaciones con <strong className='text-[#ff6500]'>Agentes de IA</strong>.
             </p>
 
             <div className='pt-1'>
@@ -73,8 +74,8 @@ const Datos = ({ id, onClickDown }) => {
         </div>
       </div>
 
-      {/* Flecha hacia abajo */}
-      <div className='flex flex-col justify-end items-center pt-1'>
+      {/* Flecha hacia abajo aislada del layout */}
+      <div className='h-10 sm:h-12 shrink-0 flex justify-center items-center'>
         <FaAngleDown className="text-3xl sm:text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
       </div>
     </div>
