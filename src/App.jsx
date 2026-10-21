@@ -5,115 +5,88 @@ import Datos from './Screens/Datos'
 import Projects from './Screens/Projects'
 import Experience from './Screens/Experience'
 import Contact from './Screens/Contact'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
+
+const SECTIONS = ['main', 'datos', 'projects', 'experience', 'contact']
 
 function App() {
   const [currentSection, setCurrentSection] = useState('main')
   const [scrolling, setScrolling] = useState(false)
+  const touchStartY = useRef(null)
+
+  const scrollToSection = useCallback((sectionId) => {
+    const element = document.querySelector(`#${sectionId}`)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setCurrentSection(sectionId)
+    }
+  }, [])
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const navigateByDirection = (direction) => {
       if (scrolling) return
-      setScrolling(true)
+      const currentIndex = SECTIONS.indexOf(currentSection)
+      const nextIndex = currentIndex + direction
 
-      event.preventDefault()
-      const mainSection = document.querySelector('#main')
-      const datosSection = document.querySelector('#datos')
-      const projectsSection = document.querySelector('#projects')
-      const experienceSection = document.querySelector('#experience')
-      const contactSection = document.querySelector('#contact')
-
-      if (event.deltaY < 0 || event.key === 'ArrowUp') {
-        if (currentSection === 'contact' && experienceSection) {
-          experienceSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('experience')
-        } else if (currentSection === 'experience' && projectsSection) {
-          projectsSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('projects')
-        } else if (currentSection === 'projects' && datosSection) {
-          datosSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('datos')
-        } else if (currentSection === 'datos' && mainSection) {
-          mainSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('main')
-        }
-      } else if (event.deltaY > 0 || event.key === 'ArrowDown') {
-        if (currentSection === 'main' && datosSection) {
-          datosSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('datos')
-        } else if (currentSection === 'datos' && projectsSection) {
-          projectsSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('projects')
-        } else if (currentSection === 'projects' && experienceSection) {
-          experienceSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('experience')
-        } else if (currentSection === 'experience' && contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' })
-          setCurrentSection('contact')
-        }
+      if (nextIndex >= 0 && nextIndex < SECTIONS.length) {
+        setScrolling(true)
+        scrollToSection(SECTIONS[nextIndex])
+        setTimeout(() => {
+          setScrolling(false)
+        }, 500)
       }
-
-      setTimeout(() => {
-        setScrolling(false)
-      }, 500)
-      
     }
 
-    window.addEventListener('wheel', handleScroll, { passive: false })
-    window.addEventListener(
-      'keydown',
-      (event) => {
-        if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-          handleScroll(event)
-        }
-      },
-      { passive: false }
-    )
+    const handleWheel = (event) => {
+      event.preventDefault()
+      if (event.deltaY < 0) {
+        navigateByDirection(-1)
+      } else if (event.deltaY > 0) {
+        navigateByDirection(1)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'ArrowUp') {
+        event.preventDefault()
+        navigateByDirection(-1)
+      } else if (event.key === 'ArrowDown') {
+        event.preventDefault()
+        navigateByDirection(1)
+      }
+    }
+
+    const handleTouchStart = (event) => {
+      touchStartY.current = event.touches[0].clientY
+    }
+
+    const handleTouchEnd = (event) => {
+      if (touchStartY.current === null) return
+      const deltaY = touchStartY.current - event.changedTouches[0].clientY
+      if (Math.abs(deltaY) > 50) {
+        navigateByDirection(deltaY > 0 ? 1 : -1)
+      }
+      touchStartY.current = null
+    }
+
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    window.addEventListener('keydown', handleKeyDown, { passive: false })
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
 
     return () => {
-      window.removeEventListener('wheel', handleScroll)
-      window.removeEventListener('keydown', handleScroll)
+      window.removeEventListener('wheel', handleWheel)
+      window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
     }
-  }, [currentSection, scrolling])
+  }, [currentSection, scrolling, scrollToSection])
 
-  const handleClickMain = () => {
-    const mainSection = document.querySelector('#main')
-    if (mainSection) {
-      mainSection.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection('main')
-    }
-  }
-  const handleClickDown = () => {
-    const datosSection = document.querySelector('#datos')
-    if (datosSection) {
-      datosSection.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection('datos')
-    }
-  }
-
-  const handleClickProjects = () => {
-    const projectsSection = document.querySelector('#projects')
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection('projects')
-    }
-  }
-
-  const handleClickExperience = () => {
-    const experienceSection = document.querySelector('#experience')
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection('experience')
-    }
-  }
-
-  const handleClickContact = () => {
-    const contactSection = document.querySelector('#contact')
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' })
-      setCurrentSection('contact')
-    }
-  }
+  const handleClickMain = () => scrollToSection('main')
+  const handleClickDown = () => scrollToSection('datos')
+  const handleClickProjects = () => scrollToSection('projects')
+  const handleClickExperience = () => scrollToSection('experience')
+  const handleClickContact = () => scrollToSection('contact')
   
   return (
     <div className="flex flex-col h-full w-full">
@@ -131,7 +104,6 @@ function App() {
         <Projects id="projects" className="flex-grow" onClickDown={handleClickExperience} />
         <Experience id="experience" className="flex-grow" onClickDown={handleClickContact} />
         <Contact id="contact" className="flex-grow" />
-
       </div>
     </div>
   )

@@ -1,0 +1,24 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portafolio_frontend
+    restart: unless-stopped
+    environment:
+      FRONTEND_PORT: "${FRONTEND_PORT:-5175}"
+      APP_DOMAIN: "${APP_DOMAIN:-localhost}"
+    ports:
+      - "${FRONTEND_PORT:-5175}:${FRONTEND_PORT:-5175}"
+    volumes:
+      - .:/app
+      - frontend_node_modules:/app/node_modules
+    networks:
+      - portafolio_network
+
+volumes:
+  frontend_node_modules:
+
+networks:
+  portafolio_network:
+    driver: bridge
