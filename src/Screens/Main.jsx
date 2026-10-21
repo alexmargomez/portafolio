@@ -10,99 +10,125 @@ import {
   FaDocker,
   FaLinux,
   FaGitAlt,
+  FaGithub,
+  FaLinkedin,
+  FaArrowAltCircleDown,
 } from "react-icons/fa";
 import { PiFileSqlFill } from "react-icons/pi";
 import { SiNginx, SiExpress, SiTypescript, SiDjango } from "react-icons/si";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
+import Pdf from '../path/CV.pdf'
 import '../styles/movements.css'
 
-const Main = ({ id, onClickDown }) => {
+const TECHNOLOGIES = [
+  { icon: FaSymfony, name: 'Symfony' },
+  { icon: TbBrandLaravel, name: 'Laravel' },
+  { icon: FaPhp, name: 'PHP' },
+  { icon: FaPython, name: 'Python' },
+  { icon: SiDjango, name: 'Django' },
+  { icon: FaNodeJs, name: 'Node.js' },
+  { icon: SiExpress, name: 'Express.js' },
+  { icon: SiTypescript, name: 'TypeScript' },
+  { icon: FaVuejs, name: 'Vue.js' },
+  { icon: FaReact, name: 'React.js' },
+  { icon: RiNextjsFill, name: 'Next.js' },
+  { icon: RiTailwindCssFill, name: 'Tailwind CSS' },
+  { icon: PiFileSqlFill, name: 'SQL' },
+  { icon: FaDocker, name: 'Docker' },
+  { icon: FaLinux, name: 'Linux' },
+  { icon: SiNginx, name: 'Nginx' },
+  { icon: FaGitAlt, name: 'Git' },
+]
+
+const Main = ({ id, onClickDown, onClickProjects }) => {
   return (
-    <div id={id} className='min-h-screen md:h-screen text-white text-center pt-24 md:pt-20 pb-6 md:pb-0 flex flex-col justify-between md:justify-evenly items-center px-4'>
-        <div className='flex flex-col-reverse flex-1 md:flex-none md:h-4/6 justify-center items-center my-8 md:my-0'>
-            <h1 className='font-bold text-4xl sm:text-5xl md:text-7xl leading-tight'>Desarrollador <br/> Web</h1>
-            <h2 className='text-xl sm:text-2xl md:text-4xl mb-2 text-gray-200'>Alexmar Gómez</h2>
+    <div
+      id={id}
+      className='min-h-screen md:h-screen text-white text-center pt-28 sm:pt-24 md:pt-20 pb-6 md:pb-4 flex flex-col justify-between items-center px-4 sm:px-6'
+    >
+      {/* Bloque Hero Central */}
+      <div className='flex flex-col flex-1 justify-center items-center max-w-4xl mx-auto my-4 md:my-0 space-y-4 sm:space-y-5'>
+        <span className='px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm sm:text-base md:text-lg font-medium tracking-wide text-gray-200'>
+          Hola, soy <strong className='text-white'>Alexmar Gómez</strong>
+        </span>
+
+        <h1 className='font-extrabold text-4xl sm:text-5xl md:text-7xl leading-tight tracking-tight'>
+          Desarrollador de <span className='text-[#ff6500]'>Software</span>
+        </h1>
+
+        <p className='text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed px-2'>
+          Especializado en arquitectura Backend, desarrollo Full Stack, optimización de bases de datos SQL, infraestructura en Linux con Docker y automatización mediante Agentes de IA.
+        </p>
+
+        {/* Botones de Acción Rápida */}
+        <div className='flex flex-wrap justify-center items-center gap-3 pt-2'>
+          <button
+            type="button"
+            onClick={onClickProjects || onClickDown}
+            className='px-6 py-3 rounded-full bg-[#ff6500] hover:bg-[#e05800] text-white font-semibold text-sm sm:text-base shadow-lg cursor-pointer transition-all'
+          >
+            Ver Proyectos
+          </button>
+
+          <a
+            href={Pdf}
+            download
+            className='flex items-center space-x-2 px-5 py-3 rounded-full border border-white/40 hover:bg-white hover:text-[#09122c] font-semibold text-sm sm:text-base cursor-pointer transition-colors'
+          >
+            <FaArrowAltCircleDown className='text-lg' />
+            <span>Descargar CV</span>
+          </a>
+
+          <div className='flex items-center gap-2.5'>
+            <a
+              href='https://github.com/alexmargomez'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='GitHub'
+              className='p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
+            >
+              <FaGithub className='text-xl' />
+            </a>
+            <a
+              href='https://www.linkedin.com/in/alexmargomez/'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='LinkedIn'
+              className='p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
+            >
+              <FaLinkedin className='text-xl' />
+            </a>
+          </div>
         </div>
-        <div className='flex flex-col md:h-1/6 justify-center items-center space-y-4 w-full my-4 md:my-0'>
-            <div className="relative flex items-center justify-center w-full">
-                <div className="absolute w-[90%] md:w-full border-t border-gray-400"></div>
-                <h3 className="relative bg-[#09122c] px-4 text-lg sm:text-xl md:text-2xl font-medium">Tecnologías que manejo</h3>
-            </div>
-            <ul className="flex flex-wrap justify-center items-center gap-5 sm:gap-6 text-3xl md:text-4xl mt-2 px-2 max-w-3xl">
-                <li className="group relative">
-                    <RiTailwindCssFill/>
-                    <span className="tooltip">Tailwind CSS</span>
-                </li>
-                <li className="group relative">
-                    <FaReact/>
-                    <span className="tooltip">React.js</span>
-                </li>
-                <li className="group relative">
-                    <FaVuejs/>
-                    <span className="tooltip">Vue.js</span>
-                </li>
-                <li className="group relative">
-                    <SiTypescript/>
-                    <span className="tooltip">TypeScript</span>
-                </li>
-                <li className="group relative">
-                    <TbBrandLaravel/>
-                    <span className="tooltip">Laravel</span>
-                </li>
-                <li className="group relative">
-                    <FaSymfony/>
-                    <span className="tooltip">Symfony</span>
-                </li>
-                <li className="group relative">
-                    <FaPhp/>
-                    <span className="tooltip">PHP</span>
-                </li>
-                <li className="group relative">
-                    <FaPython/>
-                    <span className="tooltip">Python</span>
-                </li>
-                <li className="group relative">
-                    <SiDjango/>
-                    <span className="tooltip">Django</span>
-                </li>
-                <li className="group relative">
-                    <FaNodeJs/>
-                    <span className="tooltip">Node.js</span>
-                </li>
-                <li className="group relative">
-                    <SiExpress/>
-                    <span className="tooltip">Express.js</span>
-                </li>
-                <li className="group relative">
-                    <RiNextjsFill/>
-                    <span className="tooltip">Next.js</span>
-                </li>
-                <li className="group relative">
-                    <PiFileSqlFill/>
-                    <span className="tooltip">SQL</span>
-                </li>
-                <li className="group relative">
-                    <FaDocker/>
-                    <span className="tooltip">Docker</span>
-                </li>
-                <li className="group relative">
-                    <SiNginx/>
-                    <span className="tooltip">Nginx</span>
-                </li>
-                <li className="group relative">
-                    <FaLinux/>
-                    <span className="tooltip">Linux</span>
-                </li>
-                <li className="group relative">
-                    <FaGitAlt/>
-                    <span className="tooltip">Git</span>
-                </li>
-            </ul>
+      </div>
+
+      {/* Bloque de Tecnologías */}
+      <div className='flex flex-col justify-center items-center space-y-3 w-full max-w-4xl my-2 md:my-0'>
+        <div className="relative flex items-center justify-center w-full">
+          <div className="absolute w-[90%] md:w-full border-t border-gray-500/60"></div>
+          <h3 className="relative bg-[#09122c] px-4 text-base sm:text-lg md:text-xl font-semibold text-gray-200">
+            Stack Tecnológico
+          </h3>
         </div>
-        <div className='flex flex-col md:h-1/6 justify-end items-center pt-6 md:pt-0 pb-4 md:pb-5'>
-            <FaAngleDown className="text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
-        </div>
+
+        <ul className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3.5 md:gap-4 pt-1 px-1">
+          {TECHNOLOGIES.map((tech) => (
+            <li
+              key={tech.name}
+              className="group relative flex items-center justify-center p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#ff6500] hover:text-[#ff6500] transition-all"
+            >
+              {React.createElement(tech.icon, { className: "text-2xl sm:text-3xl" })}
+              <span className="tooltip z-30">{tech.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Flecha hacia abajo */}
+      <div className='flex flex-col justify-end items-center pt-4 md:pt-2'>
+        <FaAngleDown className="text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
+      </div>
     </div>
   )
 }

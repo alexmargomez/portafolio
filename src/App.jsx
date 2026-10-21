@@ -104,7 +104,7 @@ function App() {
         handleClickContact={handleClickContact}
       />
       <div>
-        <Main id="main" className="flex-grow" onClickDown={handleClickDown} />
+        <Main id="main" className="flex-grow" onClickDown={handleClickDown} onClickProjects={handleClickProjects} />
         <Datos id="datos" className="flex-grow" onClickDown={handleClickProjects} />
         <Projects id="projects" className="flex-grow" onClickDown={handleClickExperience} />
         <Experience id="experience" className="flex-grow" onClickDown={handleClickContact} />
