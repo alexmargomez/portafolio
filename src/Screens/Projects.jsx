@@ -27,22 +27,22 @@ import '../styles/movements.css'
 
 const Projects = ({ id, onClickDown }) => {
   return (
-    <div id={id} className='h-screen text-white text-center pt-20'>
-        <div className="h-1/10 relative flex items-center justify-center w-full">
-            <div className="absolute w-[80%] border-t border-gray-400"></div>
+    <div id={id} className='min-h-screen md:h-screen text-white text-center pt-24 md:pt-20 pb-6 md:pb-0 flex flex-col justify-between items-center'>
+        <div className="md:h-1/10 relative flex items-center justify-center w-full py-2 md:py-0">
+            <div className="absolute w-[85%] md:w-[80%] border-t border-gray-400"></div>
             <h1 className="relative bg-[#09122c] px-4 text-2xl md:text-4xl font-bold">Proyectos</h1>
         </div>
-        <div className='h-8/10 flex flex-col justify-center items-center w-full p-3 md:p-5'>
-            <div className='h-3/4 grid grid-cols-1 md:grid-cols-2 gap-3 w-full text-black overflow-y-auto md:overflow-visible'>
+        <div className='md:h-8/10 flex flex-col justify-center items-center w-full px-4 py-4 md:p-5 gap-6 md:gap-0'>
+            <div className='md:h-3/4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-3 w-full text-black'>
                 {/* 1. ALpanel */}
-                <div className='bg-white h-full flex flex-col justify-between items-center rounded-3xl md:rounded-4xl p-4 md:p-0'>
-                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start overflow-hidden rounded-4xl md:px-6'>
-                        <h2 className='font-bold text-xl md:text-2xl mb-2'>ALpanel — Orquestador VPS & Docker</h2>
-                        <p className='text-xs md:text-sm text-gray-800'>
+                <div className='bg-white h-full flex flex-col justify-between items-center rounded-2xl md:rounded-4xl p-5 md:p-0 shadow-lg'>
+                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start md:px-6'>
+                        <h2 className='font-bold text-lg sm:text-xl md:text-2xl mb-2'>ALpanel — Orquestador VPS & Docker</h2>
+                        <p className='text-xs sm:text-sm text-gray-800 leading-relaxed'>
                             Panel de control autoalojado para servidores Linux VPS con Arquitectura Hexagonal. Administra proyectos multicontenedor (Laravel, Symfony, Node.js, Django) con Docker Compose, monitoreo en tiempo real vía WebSockets, despliegues Git en 1 clic con rollback automático y backups SQL.
                         </p>
                     </div>
-                    <div className='md:h-1/4 w-full flex justify-between items-center rounded-4xl md:px-8 pt-3 md:pt-0'>
+                    <div className='md:h-1/4 w-full flex flex-wrap justify-between items-center md:px-8 pt-4 md:pt-0 mt-3 md:mt-0 border-t border-gray-100 md:border-none gap-2'>
                         <div className='flex flex-wrap gap-2 text-black/60'>
                             <div className="relative group">
                                 <FaNodeJs className='text-2xl md:text-3xl' />
@@ -81,8 +81,8 @@ const Projects = ({ id, onClickDown }) => {
                                 <span className="tooltip">Linux</span>
                             </div>
                         </div>
-                        <div className='flex justify-end items-center space-x-2'>
-                            <h3 className='font-bold text-lg md:text-2xl'>FullStack</h3>
+                        <div className='flex justify-end items-center space-x-2 ml-auto'>
+                            <h3 className='font-bold text-base md:text-2xl'>FullStack</h3>
                             <a href="https://github.com/alexmargomez/ALpanel" target="_blank" rel="noopener noreferrer" className="relative group">
                                 <FaGithub className='text-3xl md:text-4xl cursor-pointer hover:text-[#ff6500]' />
                                 <span className="tooltip">Ver GitHub</span>
@@ -92,14 +92,14 @@ const Projects = ({ id, onClickDown }) => {
                 </div>
 
                 {/* 2. FactuPOS */}
-                <div className='bg-white h-full flex flex-col justify-between items-center rounded-3xl md:rounded-4xl p-4 md:p-0'>
-                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start overflow-hidden rounded-4xl md:px-6'>
-                        <h2 className='font-bold text-xl md:text-2xl mb-2'>FactuPOS — Sistema POS y Gestión de Taller</h2>
-                        <p className='text-xs md:text-sm text-gray-800'>
+                <div className='bg-white h-full flex flex-col justify-between items-center rounded-2xl md:rounded-4xl p-5 md:p-0 shadow-lg'>
+                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start md:px-6'>
+                        <h2 className='font-bold text-lg sm:text-xl md:text-2xl mb-2'>FactuPOS — Sistema POS y Gestión de Taller</h2>
+                        <p className='text-xs sm:text-sm text-gray-800 leading-relaxed'>
                             Sistema integral Punto de Venta (POS), inventario valorizado, cotizaciones, cartera y tablero Kanban en tiempo real para órdenes de trabajo y servicio técnico. Incluye cálculo de comisiones, alertas de mantenimiento por WhatsApp y arquitectura multicontenedor con Laravel 11 y React 19.
                         </p>
                     </div>
-                    <div className='md:h-1/4 w-full flex justify-between items-center rounded-4xl md:px-8 pt-3 md:pt-0'>
+                    <div className='md:h-1/4 w-full flex flex-wrap justify-between items-center md:px-8 pt-4 md:pt-0 mt-3 md:mt-0 border-t border-gray-100 md:border-none gap-2'>
                         <div className='flex flex-wrap gap-2 text-black/60'>
                             <div className="relative group">
                                 <TbBrandLaravel className='text-2xl md:text-3xl' />
@@ -130,8 +130,8 @@ const Projects = ({ id, onClickDown }) => {
                                 <span className="tooltip">Git</span>
                             </div>
                         </div>
-                        <div className='flex justify-end items-center space-x-2'>
-                            <h3 className='font-bold text-lg md:text-2xl'>FullStack</h3>
+                        <div className='flex justify-end items-center space-x-2 ml-auto'>
+                            <h3 className='font-bold text-base md:text-2xl'>FullStack</h3>
                             <a href="https://github.com/alexmargomez/Factupos" target="_blank" rel="noopener noreferrer" className="relative group">
                                 <FaGithub className='text-3xl md:text-4xl cursor-pointer hover:text-[#ff6500]' />
                                 <span className="tooltip">Ver GitHub</span>
@@ -141,14 +141,14 @@ const Projects = ({ id, onClickDown }) => {
                 </div>
 
                 {/* 3. Plataforma Zapatoqueando */}
-                <div className='bg-white h-full flex flex-col justify-between items-center rounded-3xl md:rounded-4xl p-4 md:p-0'>
-                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start overflow-hidden rounded-4xl md:px-6'>
-                        <h2 className='font-bold text-xl md:text-2xl mb-2'>Plataforma Zapatoqueando</h2>
-                        <p className='text-xs md:text-sm text-gray-800'>
+                <div className='bg-white h-full flex flex-col justify-between items-center rounded-2xl md:rounded-4xl p-5 md:p-0 shadow-lg'>
+                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start md:px-6'>
+                        <h2 className='font-bold text-lg sm:text-xl md:text-2xl mb-2'>Plataforma Zapatoqueando</h2>
+                        <p className='text-xs sm:text-sm text-gray-800 leading-relaxed'>
                             Plataforma web interactiva y autogestionable de turismo y exploración territorial con mapas dinámicos (Leaflet/OpenStreetMap), trazado de rutas punto a punto y backoffice administrativo. Backend en Node.js y TypeScript bajo Arquitectura Hexagonal con PostgreSQL y pruebas en Jest.
                         </p>
                     </div>
-                    <div className='md:h-1/4 w-full flex justify-between items-center rounded-4xl md:px-8 pt-3 md:pt-0'>
+                    <div className='md:h-1/4 w-full flex flex-wrap justify-between items-center md:px-8 pt-4 md:pt-0 mt-3 md:mt-0 border-t border-gray-100 md:border-none gap-2'>
                         <div className='flex flex-wrap gap-2 text-black/60'>
                             <div className="relative group">
                                 <FaNodeJs className='text-2xl md:text-3xl' />
@@ -187,8 +187,8 @@ const Projects = ({ id, onClickDown }) => {
                                 <span className="tooltip">Jest</span>
                             </div>
                         </div>
-                        <div className='flex justify-end items-center space-x-2'>
-                            <h3 className='font-bold text-lg md:text-2xl'>FullStack</h3>
+                        <div className='flex justify-end items-center space-x-2 ml-auto'>
+                            <h3 className='font-bold text-base md:text-2xl'>FullStack</h3>
                             <a href="https://github.com/alexmargomez/Servidor_Zapatoqueando" target="_blank" rel="noopener noreferrer" className="relative group">
                                 <FaGithub className='text-3xl md:text-4xl cursor-pointer hover:text-[#ff6500]' />
                                 <span className="tooltip">Ver GitHub</span>
@@ -198,14 +198,14 @@ const Projects = ({ id, onClickDown }) => {
                 </div>
 
                 {/* 4. API SM */}
-                <div className='bg-white h-full flex flex-col justify-between items-center rounded-3xl md:rounded-4xl p-4 md:p-0'>
-                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start overflow-hidden rounded-4xl md:px-6'>
-                        <h2 className='font-bold text-xl md:text-2xl mb-2'>API SM — Interoperabilidad Clínica FHIR</h2>
-                        <p className='text-xs md:text-sm text-gray-800'>
+                <div className='bg-white h-full flex flex-col justify-between items-center rounded-2xl md:rounded-4xl p-5 md:p-0 shadow-lg'>
+                    <div className='md:h-3/4 w-full flex flex-col justify-center items-start text-start md:px-6'>
+                        <h2 className='font-bold text-lg sm:text-xl md:text-2xl mb-2'>API SM — Interoperabilidad Clínica FHIR</h2>
+                        <p className='text-xs sm:text-sm text-gray-800 leading-relaxed'>
                             Motor de interoperabilidad en salud y validador normativo (Resolución 1888 / HL7 FHIR) integrado con sistemas de historia clínica en Symfony. Desarrollado con Python, Django y Vue 3, incluye inspector de Bundles FHIR, catálogos de Minsalud y despliegue con Docker y MariaDB (SQL).
                         </p>
                     </div>
-                    <div className='md:h-1/4 w-full flex justify-between items-center rounded-4xl md:px-8 pt-3 md:pt-0'>
+                    <div className='md:h-1/4 w-full flex flex-wrap justify-between items-center md:px-8 pt-4 md:pt-0 mt-3 md:mt-0 border-t border-gray-100 md:border-none gap-2'>
                         <div className='flex flex-wrap gap-2 text-black/60'>
                             <div className="relative group">
                                 <FaPython className='text-2xl md:text-3xl' />
@@ -240,8 +240,8 @@ const Projects = ({ id, onClickDown }) => {
                                 <span className="tooltip">Git</span>
                             </div>
                         </div>
-                        <div className='flex justify-end items-center space-x-2'>
-                            <h3 className='font-bold text-lg md:text-2xl'>FullStack</h3>
+                        <div className='flex justify-end items-center space-x-2 ml-auto'>
+                            <h3 className='font-bold text-base md:text-2xl'>FullStack</h3>
                             <a href="https://github.com/alexmargomez/API_SM" target="_blank" rel="noopener noreferrer" className="relative group">
                                 <FaGithub className='text-3xl md:text-4xl cursor-pointer hover:text-[#ff6500]' />
                                 <span className="tooltip">Ver GitHub</span>
@@ -251,19 +251,19 @@ const Projects = ({ id, onClickDown }) => {
                 </div>
             </div>
 
-            <div className='h-1/4 flex justify-center items-center'>
+            <div className='md:h-1/4 flex justify-center items-center'>
                 <a
                     href='https://github.com/alexmargomez'
                     target="_blank"
                     rel="noopener noreferrer"
-                    className='flex justify-center items-center space-x-2 border rounded-4xl p-4 hover:bg-amber-50 hover:text-black cursor-pointer transition-colors'
+                    className='flex justify-center items-center space-x-2 border rounded-4xl px-6 py-3.5 md:p-4 hover:bg-amber-50 hover:text-black cursor-pointer transition-colors'
                 >
                     <FaGithub className='text-2xl'/>
                     <h3>Ver GitHub</h3>
                 </a>
             </div>
         </div>
-        <div className='flex flex-col h-1/10 justify-end items-center pb-5'>
+        <div className='flex flex-col md:h-1/10 justify-end items-center pb-4 md:pb-5'>
             <FaAngleDown className="text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
         </div>
     </div>
