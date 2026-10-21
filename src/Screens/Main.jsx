@@ -47,28 +47,28 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
   return (
     <div
       id={id}
-      className='min-h-screen md:h-screen text-white text-center pt-28 sm:pt-24 md:pt-20 pb-6 md:pb-4 flex flex-col justify-between items-center px-4 sm:px-6'
+      className='h-dvh text-white text-center pt-22 sm:pt-24 md:pt-20 pb-3 md:pb-4 flex flex-col justify-between items-center px-4 sm:px-6 overflow-hidden'
     >
       {/* Bloque Hero Central */}
-      <div className='flex flex-col flex-1 justify-center items-center max-w-4xl mx-auto my-4 md:my-0 space-y-4 sm:space-y-5'>
-        <span className='px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm sm:text-base md:text-lg font-medium tracking-wide text-gray-200'>
+      <div className='flex flex-col flex-1 justify-center items-center max-w-4xl mx-auto space-y-3 sm:space-y-5'>
+        <span className='px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-xs sm:text-base md:text-lg font-medium tracking-wide text-gray-200'>
           Hola, soy <strong className='text-white'>Alexmar Gómez</strong>
         </span>
 
-        <h1 className='font-extrabold text-4xl sm:text-5xl md:text-7xl leading-tight tracking-tight'>
+        <h1 className='font-extrabold text-3xl sm:text-5xl md:text-7xl leading-tight tracking-tight'>
           Desarrollador de <span className='text-[#ff6500]'>Software</span>
         </h1>
 
-        <p className='text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed px-2'>
+        <p className='text-xs sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed px-2'>
           Especializado en arquitectura Backend, desarrollo Full Stack, optimización de bases de datos SQL, infraestructura en Linux con Docker y automatización mediante Agentes de IA.
         </p>
 
         {/* Botones de Acción Rápida */}
-        <div className='flex flex-wrap justify-center items-center gap-3 pt-2'>
+        <div className='flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 pt-1'>
           <button
             type="button"
             onClick={onClickProjects || onClickDown}
-            className='px-6 py-3 rounded-full bg-[#ff6500] hover:bg-[#e05800] text-white font-semibold text-sm sm:text-base shadow-lg cursor-pointer transition-all'
+            className='px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#ff6500] hover:bg-[#e05800] text-white font-semibold text-xs sm:text-base shadow-lg cursor-pointer transition-all'
           >
             Ver Proyectos
           </button>
@@ -76,51 +76,51 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
           <a
             href={Pdf}
             download
-            className='flex items-center space-x-2 px-5 py-3 rounded-full border border-white/40 hover:bg-white hover:text-[#09122c] font-semibold text-sm sm:text-base cursor-pointer transition-colors'
+            className='flex items-center space-x-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full border border-white/40 hover:bg-white hover:text-[#09122c] font-semibold text-xs sm:text-base cursor-pointer transition-colors'
           >
-            <FaArrowAltCircleDown className='text-lg' />
+            <FaArrowAltCircleDown className='text-base sm:text-lg' />
             <span>Descargar CV</span>
           </a>
 
-          <div className='flex items-center gap-2.5'>
+          <div className='flex items-center gap-2'>
             <a
               href='https://github.com/alexmargomez'
               target='_blank'
               rel='noopener noreferrer'
               aria-label='GitHub'
-              className='p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
+              className='p-2.5 sm:p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
             >
-              <FaGithub className='text-xl' />
+              <FaGithub className='text-lg sm:text-xl' />
             </a>
             <a
               href='https://www.linkedin.com/in/alexmargomez/'
               target='_blank'
               rel='noopener noreferrer'
               aria-label='LinkedIn'
-              className='p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
+              className='p-2.5 sm:p-3 rounded-full border border-white/30 bg-white/5 hover:bg-white hover:text-[#09122c] transition-colors'
             >
-              <FaLinkedin className='text-xl' />
+              <FaLinkedin className='text-lg sm:text-xl' />
             </a>
           </div>
         </div>
       </div>
 
       {/* Bloque de Tecnologías */}
-      <div className='flex flex-col justify-center items-center space-y-3 w-full max-w-4xl my-2 md:my-0'>
+      <div className='flex flex-col justify-center items-center space-y-2.5 w-full max-w-4xl'>
         <div className="relative flex items-center justify-center w-full">
-          <div className="absolute w-[90%] md:w-full border-t border-gray-500/60"></div>
-          <h3 className="relative bg-[#09122c] px-4 text-base sm:text-lg md:text-xl font-semibold text-gray-200">
+          <div className="absolute w-[90%] md:w-full border-t border-white/15"></div>
+          <h3 className="relative bg-[#09122c] px-4 text-sm sm:text-lg md:text-xl font-semibold text-gray-200">
             Stack Tecnológico
           </h3>
         </div>
 
-        <ul className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3.5 md:gap-4 pt-1 px-1">
+        <ul className="flex flex-wrap justify-center items-center gap-2 sm:gap-3.5 md:gap-4 pt-1 px-1">
           {TECHNOLOGIES.map((tech) => (
             <li
               key={tech.name}
-              className="group relative flex items-center justify-center p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#ff6500] hover:text-[#ff6500] transition-all"
+              className="group relative flex items-center justify-center p-2 sm:p-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#ff6500] hover:text-[#ff6500] transition-all"
             >
-              {React.createElement(tech.icon, { className: "text-2xl sm:text-3xl" })}
+              {React.createElement(tech.icon, { className: "text-xl sm:text-3xl" })}
               <span className="tooltip z-30">{tech.name}</span>
             </li>
           ))}
@@ -128,8 +128,8 @@ const Main = ({ id, onClickDown, onClickProjects }) => {
       </div>
 
       {/* Flecha hacia abajo */}
-      <div className='flex flex-col justify-end items-center pt-4 md:pt-2'>
-        <FaAngleDown className="text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
+      <div className='flex flex-col justify-end items-center pt-2'>
+        <FaAngleDown className="text-3xl sm:text-4xl iconDownUp cursor-pointer" onClick={onClickDown}/>
       </div>
     </div>
   )
