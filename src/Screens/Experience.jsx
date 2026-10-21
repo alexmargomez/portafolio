@@ -32,11 +32,15 @@ const Experience = ({ id, onClickDown }) => {
                         <ul className="list-none space-y-1.5 text-xs leading-relaxed"> 
                             <li className="flex items-start">
                                 <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" /> 
-                                Arquitectura, desarrollo y evolución del sistema clínico y hospitalario en PHP y Symfony sobre entornos Linux y contenedores Docker.
+                                Desarrollo y evolución del sistema clínico y hospitalario utilizando PHP, Symfony y JavaScript sobre entornos Linux y contenedores Docker.
                             </li>
                             <li className="flex items-start">
                                 <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
-                                Optimización de rendimiento en consultas y bases de datos SQL de alta concurrencia e interoperabilidad clínica (Res. 1888 / HL7 FHIR).
+                                Optimización integral de rendimiento del sistema, generación de reportes complejos y consultas en bases de datos SQL de alta concurrencia.
+                            </li>
+                            <li className="flex items-start">
+                                <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
+                                Implementación óptima de resoluciones y normativas del Ministerio de Salud para el cumplimiento regulatorio de las instituciones médicas.
                             </li>
                             <li className="flex items-start">
                                 <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
@@ -98,7 +102,7 @@ const Experience = ({ id, onClickDown }) => {
                 {/* Columna Izquierda (1. Integra Web - Software Médico y 3. Docente) */}
                 <div className="w-1/2 h-full flex flex-col justify-between text-start px-8">
                     {/* 1. Integra Web - Software Médico */}
-                    <div className='flex bg-white w-full h-[46%] p-4 px-5 rounded-xl items-center shadow-lg'>
+                    <div className='flex bg-white w-full h-[50%] p-4 px-5 rounded-xl items-center shadow-lg'>
                         <div className='w-1/4 flex justify-center items-center pr-2'>
                             <img src={SoftwareMedico} alt="Integra Web - Software Médico" className='w-36 h-28 object-contain'/>
                         </div>
@@ -109,15 +113,19 @@ const Experience = ({ id, onClickDown }) => {
                                     Actualmente
                                 </span>
                             </div>
-                            <p className='pb-1.5 text-gray-600 font-bold text-sm'>Integra Web - Software Médico</p>
+                            <p className='pb-1 text-gray-600 font-bold text-sm'>Integra Web - Software Médico</p>
                             <ul className="list-none space-y-1 text-xs leading-snug"> 
                                 <li className="flex items-start">
                                     <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" /> 
-                                    Arquitectura, desarrollo y evolución del sistema clínico y hospitalario en PHP y Symfony sobre entornos Linux y contenedores Docker.
+                                    Desarrollo y evolución del sistema clínico y hospitalario utilizando PHP, Symfony y JavaScript sobre entornos Linux y contenedores Docker.
                                 </li>
                                 <li className="flex items-start">
                                     <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
-                                    Optimización de rendimiento en consultas y bases de datos SQL de alta concurrencia e interoperabilidad clínica (Res. 1888 / HL7 FHIR).
+                                    Optimización integral de rendimiento del sistema, generación de reportes complejos y consultas en bases de datos SQL de alta concurrencia.
+                                </li>
+                                <li className="flex items-start">
+                                    <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
+                                    Implementación óptima de resoluciones y normativas del Ministerio de Salud para el cumplimiento regulatorio de las instituciones médicas.
                                 </li>
                                 <li className="flex items-start">
                                     <FaCheckCircle className="text-green-500 mr-2 mt-0.5 shrink-0" />
@@ -128,7 +136,7 @@ const Experience = ({ id, onClickDown }) => {
                     </div>
 
                     {/* 3. Colegio Sagrado Corazón de Jesús */}
-                    <div className='flex bg-white w-full h-[46%] p-4 px-5 rounded-xl items-center shadow-lg'>
+                    <div className='flex bg-white w-full h-[43%] p-4 px-5 rounded-xl items-center shadow-lg'>
                         <div className='w-1/4 flex justify-center items-center pr-2'>
                             <img src={logo} alt="Colegio Sagrado Corazón de Jesús" className='w-28 h-28 object-contain' />
                         </div>
